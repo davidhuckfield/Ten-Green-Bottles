@@ -77,18 +77,17 @@ function App() {
     }
   
     for (let i=n; i>=1; i--) {
-        console.log(i);
-        console.log(numberToText(i));
-        let currentNumberText = numberToText(i).charAt(0).toUpperCase() + numberToText(i).substring(1);
-        console.log(`current number text is ${currentNumberText}`);
+        let currentNumberTextRaw = numberToText(i);
+        let currentNumberText = currentNumberTextRaw.charAt(0).toUpperCase() + currentNumberTextRaw.substring(1);
         let nextNumberText;
         if (i===1) {
             nextNumberText = "no";
         }
         else {
-        nextNumberText = numberToText(i-1).charAt(0).toUpperCase() +numberToText(i-1).substring(1);
+        let nextNumberTextRaw = numberToText(i-1);
+        nextNumberText = nextNumberTextRaw.charAt(0).toUpperCase() +nextNumberTextRaw.substring(1);
         }
-        console.log(`next number text is ${nextNumberText}`);
+        
         returnString += `${currentNumberText} green bottle${currentNumberText==="One" ? "" : "s"} hanging on the wall,\n`;
         returnString += `${currentNumberText} green bottle${currentNumberText==="One" ? "" : "s"} hanging on the wall,\n`;
         returnString += `${currentNumberText==="One" ? "If that" : "And if"} one green bottle should accidentally fall,\n`;
